@@ -14,15 +14,27 @@
 
 ###### HTTPセッションを抽象化した機能
 > ### ExecutionContext
-> **public ExecutionContext setSessionScopedVar(java.lang.String varName, java.lang.Object varValue)**  
+> **public ExecutionContext setSessionScopedVar(java.lang.String varName, java.lang.Object varValue)**
+> 
 > セッションスコープ上の変数の値を設定する。  
 > 既に定義済みの変数は上書きされる。
+
+> ### SessionUtil  
+> **public static void put(ExecutionContext ctx,
+>                       java.lang.String name,
+>                       java.lang.Object value)**
+> 
+> SessionStoreに変数を保存する。  
+> オブジェクトの保存先はSessionManagerで指定したSessionStoreが選択される
 
 > ### HttpSessionStore
 > **public void save(java.lang.String sessionId,
 >                 java.util.List<SessionEntry> entries,
->                 ExecutionContext executionContext)**  
+>                 ExecutionContext executionContext)**
+> 
 > セッションの内容をストアに保存する。
+* セッションID = セッションストアに読み書きされる値に対応するキー  
+* おそらく、ExecutionContext.setSessionScopedVarだけでは、セッション変数が
 
 ###### まとめ  
 HTTPセッションは「仕組み」  
