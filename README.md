@@ -34,7 +34,7 @@
 > 
 > セッションの内容をストアに保存する。
 * セッションID = セッションストアに読み書きされる値に対応するキー  
-* おそらく、ExecutionContext.setSessionScopedVarだけでは、セッション変数が
+* ExecutionContext.setSessionScopedVarだけでは、セッション変数はHTTPセッションとして管理される？
 
 ###### まとめ  
 HTTPセッションは「仕組み」  
